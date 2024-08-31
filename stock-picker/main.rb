@@ -21,3 +21,12 @@ end
 
 #example
 stock_picker([17,3,6,9,15,8,6,1,10])
+
+#Testing
+test_array_1 = 10.times.map { rand(1..50) }
+test_array_2 = 10.times.map { rand(1..50) }
+test_array_3 = 10.times.map { rand(1..50) }
+
+stock_picker(test_array_1)
+stock_picker(test_array_2)
+stock_picker(test_array_3)
