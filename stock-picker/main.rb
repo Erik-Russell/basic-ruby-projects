@@ -25,3 +25,28 @@
 # --> only compare numbers with a greater index
 # compare each numbers larget individual differences and find the largest difference
 # return an array of pairs indexes
+
+stocks = [17,3,6,9,15,8,6,1,10]
+
+buy_stock = stocks[0]
+profit = 0
+buy_and_sell = []
+
+stocks.each_with_index do |current_value, index|
+  next if index == 0 # Skip the first element since it's already assigned to buy_stock
+
+  # Calculate the difference between the current value and the minimum value seen so far
+  difference = current_value - buy_stock
+  
+  # If the current difference is greater than the maximum difference found so far, update the maximum difference and buy_and_sell
+  if difference > profit
+    profit = difference
+    buy_and_sell = [buy_stock, current_value]
+  end
+
+  # Update the minimum value seen so far if the current value is less than the minimum value
+  buy_stock = [buy_stock, current_value].min
+end
+
+puts "Pair with the greatest difference: #{buy_and_sell}"
+puts "Profit: #{profit}"
